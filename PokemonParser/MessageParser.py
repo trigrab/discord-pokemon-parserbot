@@ -58,6 +58,7 @@ class MessageParser:
                                 name = s[0]
                                 value = s[1]
                                 if name == "IV":
+                                    value = value.replace('%', '')
                                     pokemon_data.iv = value
                                 if name == "LV":
                                     pokemon_data.lvl = value
