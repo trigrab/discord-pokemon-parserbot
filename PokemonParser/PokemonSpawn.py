@@ -19,7 +19,7 @@ class PokemonSpawn:
 
     @despawn_time.setter
     def despawn_time(self, despawn_time):
-        self._despawn_time = pytz.timezone('Europe/Berlin').localizedespawn_time(despawn_time)
+        self._despawn_time = pytz.timezone('Europe/Berlin').localize(despawn_time)
 
     def as_dict(self):
         return [(a, getattr(self, a)) for a in dir(self) if
