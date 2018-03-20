@@ -29,8 +29,10 @@ class MessageParser:
         return lat, lon
 
     def parse_pokemon(self, message: Message):
-        logger.debug(message.content)
-        logger.debug(message.embeds)
+        if message.content:
+            logger.debug(message.content)
+        if message.embeds:
+            logger.debug(message.embeds)
 
         pokemon_data = PokemonSpawn()
 
@@ -69,6 +71,8 @@ class MessageParser:
         return pokemon_data
 
     def parse_raid(self, message: Message):
-        logger.debug(message.content)
-        logger.debug(message.embeds)
+        if message.content:
+            logger.debug(message.content)
+        if message.embeds:
+            logger.debug(message.embeds)
         return Raid()

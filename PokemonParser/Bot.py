@@ -36,7 +36,7 @@ class Bot(discord.Client):
         logger.info('resumed...')
 
     async def on_message(self, message: discord.Message):
-        logger.info('new message')
+        logger.info('---------------------')
         # if message is direct message ignore
         if message.channel.is_private:
             return
@@ -60,6 +60,8 @@ class Bot(discord.Client):
             logger.info(message.author)
             logger.info(message.content)
             logger.info(message.embeds)
+
+        logger.info('---------------------')
 
     def log_server_info(self):
         server_data = []
