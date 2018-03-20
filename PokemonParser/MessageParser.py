@@ -34,7 +34,7 @@ class MessageParser:
 
         pokemon_data = PokemonSpawn()
 
-        pokemon_data.number = self.pokedex.get_pokemon_by_id(message.author.name.split('#')[0])
+        pokemon_data.number = self.pokedex.get_pokemon_id_by_name(message.author.name.split('#')[0])
 
         for embed in message.embeds:
             if isinstance(embed, dict):
