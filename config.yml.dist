@@ -1,0 +1,14 @@
+token: "sometoken"
+pokemon_channels:
+  - 'somechannel'
+  - 'someotherchannel'
+raid_channels:
+  - 'justanotherchannel'
+  - 'channel1337'
+embeds_ignore:
+  - 'thumbnail'
+  - 'image'
+rest_api_url: "http://localhost:8000/api/pokepositions/"
+rest_api_token: "someothertoken"
+servers:
+  - 'mycoolchannel'
