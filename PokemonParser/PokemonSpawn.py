@@ -19,6 +19,7 @@ class PokemonSpawn:
 
     @despawn_time.setter
     def despawn_time(self, despawn_time):
+        despawn_time.replace(tzinfo=timezone.utc).astimezone(tz=None)
         self._despawn_time = pytz.timezone('Europe/Berlin').localize(despawn_time)
 
     def as_dict(self):
