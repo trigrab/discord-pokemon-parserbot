@@ -49,7 +49,6 @@ class Bot(discord.Client):
 
         if message.channel.name in self.config.pokemon_channels:
             pokemon = self.message_parser.parse_pokemon(message)
-            logger.info(json.dumps(pokemon.as_dict()))
             logger.info('Posted: ' + str(self.rest.post_pokemon(pokemon)))
         elif message.channel.name in self.config.raid_channels:
             raid = self.message_parser.parse_raid(message)

@@ -2,6 +2,10 @@ import requests
 from .PokemonSpawn import PokemonSpawn
 from .Raid import Raid
 import json
+import logging
+
+logger = logging.getLogger('mybot')
+
 
 class RESTClient:
 
@@ -18,6 +22,7 @@ class RESTClient:
             "poke_lvl": pokemon.lvl,
             "poke_despawn_time": pokemon.despawn_time
         })
+        logger.info(post_data)
         return requests.post(self.api_url, json=post_data, headers=self.auth_header)
 
     def post_raid(self, raid: Raid):
