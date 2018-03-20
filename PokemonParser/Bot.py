@@ -54,9 +54,10 @@ class Bot(discord.Client):
         elif message.channel.name in self.config.raid_channels:
             raid = self.message_parser.parse_raid(message)
             logger.info(json.dumps(raid.as_dict()))
-            self.rest.post_pokemon(raid)
+           #  TODO self.rest.post_pokemon(raid)
         else:
-            logger.info(message.channel.topic)
+            logger.info(message.channel.name)
+            logger.info(message.author)
             logger.info(message.content)
             logger.info(message.embeds)
 
