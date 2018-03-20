@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from datetime import datetime
 from datetime import timezone
+import pytz
 
 
 class PokemonSpawn:
@@ -18,8 +19,7 @@ class PokemonSpawn:
 
     @despawn_time.setter
     def despawn_time(self, despawn_time):
-        self._despawn_time = despawn_time
-        self._despawn_time.replace(tzinfo=timezone.utc).astimezone(tz=None)
+        self._despawn_time = pytz.timezone('Europe/Berlin').localizedespawn_time(despawn_time)
 
     def as_dict(self):
         return [(a, getattr(self, a)) for a in dir(self) if
